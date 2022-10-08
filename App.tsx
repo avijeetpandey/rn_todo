@@ -18,7 +18,7 @@ const App = () => {
       <View style={styles.footer}>
         <View style={styles.inputContainer}>
           <TextInput
-            placeholder="Add Todo"
+            placeholder="Enter todo here"
             placeholderTextColor={COLORS.secondary}
             style={{color: COLORS.primary}}
           />

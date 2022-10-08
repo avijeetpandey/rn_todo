@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
+  FlatList,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -9,19 +10,29 @@ import {
   View,
 } from 'react-native';
 
-const COLORS = {
-  primary: '#262626',
-  secondary: '#757575',
-  white: '#ffffff',
-};
+import ListItem from './src/components/ListItem';
+import {COLORS} from './src/constants';
 
 const App = () => {
+  const [todo, setTodo] = useState([
+    {
+      id: 1,
+      task: 'Hey this is my first task',
+      completed: true,
+    },
+  ]);
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.heading}>
         <Text style={styles.text}>TODO APP</Text>
         <Icon name="delete" color="red" size={25} />
       </View>
+      <FlatList
+        data={todo}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{}}
+        renderItem={({item}) => <ListItem todo={item} />}
+      />
       <View style={styles.footer}>
         <View style={styles.inputContainer}>
           <TextInput

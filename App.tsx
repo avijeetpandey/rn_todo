@@ -20,6 +20,56 @@ const App = () => {
       task: 'Hey this is my first task',
       completed: true,
     },
+    {
+      id: 2,
+      task: 'Hey this is my first task',
+      completed: true,
+    },
+    {
+      id: 3,
+      task: 'Hey this is my first task',
+      completed: true,
+    },
+    {
+      id: 4,
+      task: 'Hey this is my first task',
+      completed: true,
+    },
+    {
+      id: 5,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 6,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 7,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 8,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 9,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 10,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 11,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
   ]);
   return (
     <SafeAreaView style={styles.safeArea}>

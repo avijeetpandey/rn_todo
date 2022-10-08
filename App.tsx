@@ -1,6 +1,13 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {SafeAreaView, StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 const COLORS = {
   primary: '#262626',
@@ -23,6 +30,11 @@ const App = () => {
             style={{color: COLORS.primary}}
           />
         </View>
+        <TouchableOpacity>
+          <View style={styles.iconContainer}>
+            <Icon name="add" color={COLORS.white} size={30} />
+          </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -62,6 +74,15 @@ const styles = StyleSheet.create({
     marginRight: 20,
     paddingHorizontal: 20,
     borderRadius: 30,
+  },
+  iconContainer: {
+    height: 50,
+    width: 50,
+    backgroundColor: COLORS.primary,
+    elevation: 40,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

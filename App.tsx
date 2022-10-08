@@ -1,28 +1,101 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {SafeAreaView, StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
-const COLORS = {
-  primary: '#262626',
-  secondary: '#757575',
-  white: '#ffffff',
-};
+import ListItem from './src/components/ListItem';
+import {COLORS} from './src/constants';
 
 const App = () => {
+  const [todo, setTodo] = useState([
+    {
+      id: 1,
+      task: 'Hey this is my first task',
+      completed: true,
+    },
+    {
+      id: 2,
+      task: 'Hey this is my first task',
+      completed: true,
+    },
+    {
+      id: 3,
+      task: 'Hey this is my first task',
+      completed: true,
+    },
+    {
+      id: 4,
+      task: 'Hey this is my first task',
+      completed: true,
+    },
+    {
+      id: 5,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 6,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 7,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 8,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 9,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 10,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+    {
+      id: 11,
+      task: 'Hey this is my first task',
+      completed: false,
+    },
+  ]);
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.heading}>
         <Text style={styles.text}>TODO APP</Text>
         <Icon name="delete" color="red" size={25} />
       </View>
+      <FlatList
+        data={todo}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{}}
+        renderItem={({item}) => <ListItem todo={item} />}
+      />
       <View style={styles.footer}>
         <View style={styles.inputContainer}>
           <TextInput
-            placeholder="Add Todo"
+            placeholder="Enter todo here"
             placeholderTextColor={COLORS.secondary}
             style={{color: COLORS.primary}}
           />
         </View>
+        <TouchableOpacity>
+          <View style={styles.iconContainer}>
+            <Icon name="add" color={COLORS.white} size={30} />
+          </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -62,6 +135,15 @@ const styles = StyleSheet.create({
     marginRight: 20,
     paddingHorizontal: 20,
     borderRadius: 30,
+  },
+  iconContainer: {
+    height: 50,
+    width: 50,
+    backgroundColor: COLORS.primary,
+    elevation: 40,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
